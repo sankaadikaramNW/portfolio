@@ -537,6 +537,36 @@ h1, h2, h3, h4 {
     color: var(--text-muted);
 }
 
+/* GitHub Stats */
+.github-stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 2rem;
+}
+
+.github-card {
+    background: transparent;
+    border-radius: 16px;
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 300px;
+    max-width: 100%;
+}
+
+.github-card:hover {
+    transform: translateY(-8px);
+}
+
+.github-img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Contact */
 .contact-container {
     display: grid;
