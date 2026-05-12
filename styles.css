@@ -439,6 +439,8 @@ h1, h2, h3, h4 {
     align-items: center;
     gap: 0.5rem;
     color: var(--text-main);
+    z-index: 100;
+    transform: translateZ(100px);
 }
 
 .badge-top-right {
@@ -806,9 +808,9 @@ h1, h2, h3, h4 {
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% { transform: translateY(0px) translateZ(100px); }
+    50% { transform: translateY(-10px) translateZ(100px); }
+    100% { transform: translateY(0px) translateZ(100px); }
 }
 
 .float-anim {
