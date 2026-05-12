@@ -662,6 +662,36 @@ h1, h2, h3, h4 {
 }
 
 /* GitHub Stats */
+#github {
+    background: linear-gradient(180deg, var(--bg-main) 0%, var(--bg-light) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+#github::before, #github::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+}
+
+#github::before {
+    top: 10%;
+    left: -5%;
+    width: 300px;
+    height: 300px;
+    background: rgba(37, 99, 235, 0.05);
+}
+
+#github::after {
+    bottom: 5%;
+    right: -5%;
+    width: 400px;
+    height: 400px;
+    background: rgba(139, 92, 246, 0.05);
+}
+
 .github-stats-container {
     display: flex;
     flex-wrap: wrap;
@@ -669,26 +699,34 @@ h1, h2, h3, h4 {
     justify-content: center;
     align-items: stretch;
     margin-top: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .github-card {
-    background: transparent;
-    border-radius: 16px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
     transition: var(--transition);
     display: flex;
     justify-content: center;
     align-items: center;
     flex: 1 1 300px;
     max-width: 100%;
+    box-shadow: var(--shadow-sm);
 }
 
 .github-card:hover {
     transform: translateY(-8px);
+    border-color: var(--primary-light);
+    box-shadow: var(--shadow-lg);
 }
 
 .github-img {
     max-width: 100%;
     height: auto;
+    border-radius: 8px;
 }
 
 /* Contact */
