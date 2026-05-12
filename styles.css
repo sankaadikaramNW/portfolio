@@ -305,6 +305,42 @@ h1, h2, h3, h4 {
     border: 6px solid white;
 }
 
+/* Satellite Animation Styles */
+.satellite-orbit {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    border-radius: 50%;
+    border: 1px dashed rgba(37, 99, 235, 0.2);
+    animation: orbit 15s linear infinite;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.satellite {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    color: var(--primary);
+    font-size: 1.25rem;
+}
+
+@keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
 .floating-badge {
     position: absolute;
     background: white;
