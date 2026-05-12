@@ -453,6 +453,88 @@ h1, h2, h3, h4 {
     right: -10%;
 }
 
+/* Tech Stack Section */
+.tech-stack-section {
+    background-color: #0F172A; /* Deep dark background */
+    color: white;
+}
+
+.tech-stack-section .section-title {
+    color: white;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.tech-category {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tech-category:last-child {
+    border-bottom: none;
+}
+
+.tech-category h3 {
+    font-size: 1.25rem;
+    color: #CBD5E1;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.tech-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: white;
+    transition: var(--transition);
+    cursor: default;
+}
+
+.tech-badge i {
+    font-size: 1rem;
+}
+
+.tech-badge:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Badge Colors */
+.python { background-color: #3776AB; }
+.typescript { background-color: #3178C6; }
+.javascript { background-color: #F7DF1E; color: #000; }
+.cpp { background-color: #00599C; }
+.html5 { background-color: #E34F26; }
+.css3 { background-color: #1572B6; }
+.fastapi { background-color: #05998B; }
+.nodejs { background-color: #339933; }
+.streamlit { background-color: #FF4B4B; }
+.arduino { background-color: #00979D; }
+.dotnet { background-color: #512BD4; }
+.linux { background-color: #FCC624; color: #000; }
+.git { background-color: #F05032; }
+.vscode { background-color: #007ACC; }
+.mysql { background-color: #4479A1; }
+.postgresql { background-color: #4169E1; }
+.docker { background-color: #2496ED; }
+.kubernetes { background-color: #326CE5; }
+.aws { background-color: #232F3E; }
+.azure { background-color: #0078D4; }
+
 /* Sections Common */
 .section {
     padding: 6rem 0;
