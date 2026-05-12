@@ -303,42 +303,128 @@ h1, h2, h3, h4 {
     object-fit: cover;
     border-radius: 50%;
     border: 6px solid white;
+    position: relative;
+    z-index: 5;
+    transform: translateZ(0);
 }
 
 /* Satellite Animation Styles */
+.profile-wrapper {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
 .satellite-orbit {
     position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
+    top: 50%;
+    left: 50%;
+    width: 480px;
+    height: 480px;
+    margin-top: -240px;
+    margin-left: -240px;
     border-radius: 50%;
-    border: 1px dashed rgba(37, 99, 235, 0.2);
-    animation: orbit 15s linear infinite;
+    border: 2px solid rgba(37, 99, 235, 0.15);
+    transform-style: preserve-3d;
+    animation: orbit3d 12s linear infinite;
     pointer-events: none;
-    z-index: 5;
+    z-index: 10;
+}
+
+.satellite-orbit::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px dashed rgba(37, 99, 235, 0.3);
 }
 
 .satellite {
     position: absolute;
-    top: 0;
+    top: -17px;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     background: white;
-    border-radius: 12px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
     color: var(--primary);
-    font-size: 1.25rem;
+    font-size: 1rem;
+    transform: translateX(-50%) rotateX(-90deg); /* Keeping it visible in 3D */
 }
 
-@keyframes orbit {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+@keyframes orbit3d {
+    0% { transform: rotateX(75deg) rotateY(20deg) rotateZ(0deg); }
+    100% { transform: rotateX(75deg) rotateY(20deg) rotateZ(360deg); }
+}
+
+/* Second satellite for more "GPS constellation" look */
+.satellite-orbit-2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 480px;
+    height: 480px;
+    margin-top: -240px;
+    margin-left: -240px;
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    animation: orbit3d2 15s linear infinite;
+    pointer-events: none;
+    z-index: 9;
+}
+
+.satellite-orbit-2::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1px dashed rgba(139, 92, 246, 0.2);
+}
+
+.satellite-2 {
+    position: absolute;
+    bottom: -17px;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+    color: #8b5cf6;
+    font-size: 0.85rem;
+    transform: translateX(-50%) rotateX(-90deg);
+}
+
+@keyframes orbit3d2 {
+    0% { transform: rotateX(60deg) rotateY(-30deg) rotateZ(0deg); }
+    100% { transform: rotateX(60deg) rotateY(-30deg) rotateZ(360deg); }
+}
+
+/* Responsiveness for Satellites */
+@media (max-width: 1024px) {
+    .satellite-orbit, .satellite-orbit-2 {
+        width: 420px;
+        height: 420px;
+        margin-top: -210px;
+        margin-left: -210px;
+    }
+}
+
+@media (max-width: 480px) {
+    .satellite-orbit, .satellite-orbit-2 {
+        width: 320px;
+        height: 320px;
+        margin-top: -160px;
+        margin-left: -160px;
+    }
+    .satellite { width: 25px; height: 25px; font-size: 0.75rem; top: -12px; }
+    .satellite-2 { width: 22px; height: 22px; font-size: 0.65rem; bottom: -11px; }
 }
 
 .floating-badge {
