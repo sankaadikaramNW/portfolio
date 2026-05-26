@@ -1211,8 +1211,291 @@ h4 {
     }
 
     .footer-content {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   Premium Tactical HUD Radar & Satellite Styling
+   ========================================================================== */
+.hud-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.1);
+    filter: blur(20px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hud-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.ring-outer {
+    width: 460px;
+    height: 460px;
+    margin-top: -230px;
+    margin-left: -230px;
+    border: 2px dashed rgba(37, 99, 235, 0.15);
+    animation: spin-clockwise 60s linear infinite;
+}
+
+.ring-middle {
+    width: 430px;
+    height: 430px;
+    margin-top: -215px;
+    margin-left: -215px;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    animation: spin-counterclockwise 45s linear infinite;
+}
+
+.ring-inner {
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border: 2px dotted rgba(139, 92, 246, 0.25);
+    animation: spin-clockwise 30s linear infinite;
+}
+
+.hud-scanner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, rgba(37, 99, 235, 0.7), transparent);
+    z-index: 6;
+    pointer-events: none;
+    animation: scan-vertical 5s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+}
+
+.hud-corner {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-color: rgba(37, 99, 235, 0.6);
+    border-style: solid;
+    z-index: 6;
+    pointer-events: none;
+    animation: corner-glow 4s ease-in-out infinite;
+}
+
+.top-left {
+    top: -5px;
+    left: -5px;
+    border-width: 2px 0 0 2px;
+}
+
+.top-right {
+    top: -5px;
+    right: -5px;
+    border-width: 2px 2px 0 0;
+}
+
+.bottom-left {
+    bottom: -5px;
+    left: -5px;
+    border-width: 0 0 2px 2px;
+}
+
+.bottom-right {
+    bottom: -5px;
+    right: -5px;
+    border-width: 0 2px 2px 0;
+}
+
+/* Make Satellites look high-tech and sleek */
+.satellite, .satellite-2 {
+    background: #0f172a !important; /* Dark theme background */
+    border: 2px solid rgba(37, 99, 235, 0.6) !important;
+    color: #3b82f6 !important;
+    font-size: 0.9rem !important;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.6) !important;
+    transition: transform 0.3s ease;
+}
+
+.satellite-2 {
+    border-color: rgba(139, 92, 246, 0.6) !important;
+    color: #a78bfa !important;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.6) !important;
+}
+
+/* Responsive adjustment for radar rings on mobile */
+@media (max-width: 480px) {
+    .ring-outer {
+        width: 320px;
+        height: 320px;
+        margin-top: -160px;
+        margin-left: -160px;
+    }
+    
+    .ring-middle {
+        width: 300px;
+        height: 300px;
+        margin-top: -150px;
+        margin-left: -150px;
+    }
+    
+    .ring-inner {
+        width: 280px;
+        height: 280px;
+        margin-top: -140px;
+        margin-left: -140px;
+    }
+    
+    .satellite-orbit, .satellite-orbit-2 {
+        width: 320px !important;
+        height: 320px !important;
+        margin-top: -160px !important;
+        margin-left: -160px !important;
+    }
+}
+
+@keyframes spin-clockwise {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spin-counterclockwise {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+@keyframes scan-vertical {
+    0%, 100% {
+        top: 0%;
+        opacity: 0.2;
+    }
+    50% {
+        top: 100%;
+        opacity: 1;
+    }
+}
+
+@keyframes corner-glow {
+    0%, 100% {
+        filter: brightness(1);
+        border-color: rgba(37, 99, 235, 0.5);
+    }
+    50% {
+        filter: brightness(1.4);
+        border-color: rgba(37, 99, 235, 0.9);
+        box-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
+    }
+}
+
+/* ==========================================================================
+   Featured Projects Section Grid & Cards Styles (Previous Theme Match)
+   ========================================================================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.25rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: rgba(37, 99, 235, 0.15);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.badge-ai { background: rgba(37, 99, 235, 0.08); color: #2563eb; }
+.badge-ml { background: rgba(139, 92, 246, 0.08); color: #8b5cf6; }
+.badge-cv { background: rgba(16, 185, 129, 0.08); color: #10b981; }
+.badge-fs { background: rgba(245, 158, 11, 0.08); color: #f59e0b; }
+
+.project-role {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.project-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+    line-height: 1.4;
+}
+
+.project-desc {
+    font-size: 0.925rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    margin-bottom: 1.75rem;
+    flex-grow: 1;
+}
+
+.project-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    font-size: 0.725rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: #f8fafc;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.project-card:hover .tech-tag {
+    background: #f1f5f9;
+    color: var(--text-main);
+    border-color: rgba(37, 99, 235, 0.05);
+}
+
+/* Adjust grid layout on tablets and mobile screens */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
