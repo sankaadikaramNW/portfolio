@@ -307,8 +307,7 @@ h4 {
     border-radius: 50%;
     border: 6px solid white;
     position: relative;
-    z-index: 5;
-    transform: translateZ(0);
+    transform: translateZ(1px);
 }
 
 /* Satellite Animation Styles */
@@ -330,7 +329,6 @@ h4 {
     transform-style: preserve-3d;
     animation: orbit3d 12s linear infinite;
     pointer-events: none;
-    z-index: 10;
 }
 
 .satellite-orbit::after {
@@ -382,7 +380,6 @@ h4 {
     transform-style: preserve-3d;
     animation: orbit3d2 15s linear infinite;
     pointer-events: none;
-    z-index: 9;
 }
 
 .satellite-orbit-2::after {
@@ -443,15 +440,15 @@ h4 {
     }
 
     .satellite {
-        width: 250px;
-        height: 250px;
+        width: 25px;
+        height: 25px;
         font-size: 0.75rem;
         top: -12px;
     }
 
     .satellite-2 {
-        width: 220px;
-        height: 220px;
+        width: 22px;
+        height: 22px;
         font-size: 0.65rem;
         bottom: -11px;
     }
