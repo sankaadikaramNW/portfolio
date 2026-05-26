@@ -307,6 +307,7 @@ h4 {
     border-radius: 50%;
     border: 6px solid white;
     position: relative;
+    z-index: 5;
     transform: translateZ(1px);
 }
 
@@ -329,6 +330,7 @@ h4 {
     transform-style: preserve-3d;
     animation: orbit3d 12s linear infinite;
     pointer-events: none;
+    z-index: 1; /* Default to behind */
 }
 
 .satellite-orbit::after {
@@ -360,10 +362,25 @@ h4 {
 @keyframes orbit3d {
     0% {
         transform: rotateX(75deg) rotateY(20deg) rotateZ(0deg);
+        z-index: 1; /* Top part is in background (behind profile-img z-index 5) */
     }
-
+    24.9% {
+        z-index: 1;
+    }
+    25% {
+        transform: rotateX(75deg) rotateY(20deg) rotateZ(90deg);
+        z-index: 10; /* Moves to bottom part, comes to foreground (in front of z-index 5) */
+    }
+    74.9% {
+        z-index: 10;
+    }
+    75% {
+        transform: rotateX(75deg) rotateY(20deg) rotateZ(270deg);
+        z-index: 1; /* Moves back to top part, returns to background */
+    }
     100% {
         transform: rotateX(75deg) rotateY(20deg) rotateZ(360deg);
+        z-index: 1;
     }
 }
 
@@ -380,6 +397,7 @@ h4 {
     transform-style: preserve-3d;
     animation: orbit3d2 15s linear infinite;
     pointer-events: none;
+    z-index: 10; /* Default to in front */
 }
 
 .satellite-orbit-2::after {
@@ -410,10 +428,25 @@ h4 {
 @keyframes orbit3d2 {
     0% {
         transform: rotateX(60deg) rotateY(-30deg) rotateZ(0deg);
+        z-index: 10; /* Bottom part is in foreground (in front of profile-img z-index 5) */
     }
-
+    24.9% {
+        z-index: 10;
+    }
+    25% {
+        transform: rotateX(60deg) rotateY(-30deg) rotateZ(90deg);
+        z-index: 1; /* Moves to top part, returns to background (behind z-index 5) */
+    }
+    74.9% {
+        z-index: 1;
+    }
+    75% {
+        transform: rotateX(60deg) rotateY(-30deg) rotateZ(270deg);
+        z-index: 10; /* Moves back to bottom part, comes to foreground */
+    }
     100% {
         transform: rotateX(60deg) rotateY(-30deg) rotateZ(360deg);
+        z-index: 10;
     }
 }
 
