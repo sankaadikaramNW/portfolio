@@ -4,18 +4,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sanka Adikaram | Portfolio</title>
-    <meta name="description"
-        content="Portfolio of Sanka Adikaram - IT Professional, Software Developer, and Data Science Enthusiast.">
+    <title>Sanka Adikaram | IT Professional, Software Developer & AI Researcher</title>
+    
+    <!-- Standard SEO Meta Tags -->
+    <meta name="google-site-verification" content="r0SANFSaPv9MlaX-osyW8Col8esqMxKLMbGOP2p-k5I" />
+    <meta name="description" content="Portfolio of Sanka Adikaram: IT Professional, Software Developer, and AI/Machine Learning Researcher specializing in full-stack, computer vision, and IoT systems.">
+    <meta name="keywords" content="Sanka Adikaram, IT Professional, Software Developer, Data Science, AI Research, Machine Learning, Sri Lanka Air Force, Computer Vision, IoT, POS System, Portfolio, Web Developer">
+    <meta name="author" content="Sanka Adikaram">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2563EB">
+    <link rel="canonical" href="https://sankaadikaramnw.github.io/portfolio/">
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sankaadikaramnw.github.io/portfolio/">
+    <meta property="og:title" content="Sanka Adikaram | IT Professional, Software Developer & AI Researcher">
+    <meta property="og:description" content="Explore Sanka Adikaram's professional portfolio highlighting expertise in IT systems, network operations, R&D software development, and AI/Machine Learning models.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/211200214?s=400&u=209bb55248829b4054ead625f016c468b10e2bee&v=4">
+    <meta property="og:site_name" content="Sanka Adikaram Portfolio">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://sankaadikaramnw.github.io/portfolio/">
+    <meta name="twitter:title" content="Sanka Adikaram | IT Professional, Software Developer & AI Researcher">
+    <meta name="twitter:description" content="Explore Sanka Adikaram's professional portfolio highlighting expertise in IT systems, network operations, R&D software development, and AI/Machine Learning models.">
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/211200214?s=400&u=209bb55248829b4054ead625f016c468b10e2bee&v=4">
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/profile.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/profile.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/profile.png">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Structured Data (JSON-LD Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sanka Adikaram",
+      "url": "https://sankaadikaramnw.github.io/portfolio/",
+      "image": "https://avatars.githubusercontent.com/u/211200214?s=400&u=209bb55248829b4054ead625f016c468b10e2bee&v=4",
+      "sameAs": [
+        "https://www.linkedin.com/in/sanka-adikaram-9683b3192",
+        "https://github.com/sankaadikaramNW"
+      ],
+      "jobTitle": "IT Professional & Software Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Sri Lanka Air Force"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "ESOFT Metro Campus",
+          "department": "Data Science"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "National Institute of Business Management (NIBM)",
+          "department": "Computer Software Engineering"
+        }
+      ],
+      "description": "IT Professional, Software Developer, and Data Science Enthusiast serving in the Sri Lanka Air Force, developing R&D prototypes, AI models, and full-stack solutions.",
+      "knowsAbout": ["Software Development", "Machine Learning", "Computer Vision", "DevOps", "Network Operations", "IoT"]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Sanka Adikaram Portfolio",
+      "url": "https://sankaadikaramnw.github.io/portfolio/",
+      "description": "Professional portfolio of Sanka Adikaram, showcasing software projects, IT systems experience, and scientific R&D."
+    }
+    </script>
+
     <link rel="stylesheet" href="styles.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
+    <script>
+        // Flicker-free pre-boot check for Dark Mode preference
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -33,9 +115,12 @@
             </div>
 
             <div class="nav-actions">
+                <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
                 <a href="https://www.linkedin.com/in/sanka-adikaram-9683b3192" target="_blank" class="icon-link"><i
                         class="fab fa-linkedin"></i></a>
-                <a href="#contact" class="btn btn-primary">Hire Me</a>
+                <a href="#hire-me" class="btn btn-primary">Hire Me</a>
                 <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
             </div>
         </div>
@@ -48,6 +133,7 @@
         <a href="#skills" class="mobile-link">Skills</a>
         <a href="#tech-stack" class="mobile-link">Tech Stack</a>
         <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#hire-me" class="mobile-link">Hire Me</a>
         <a href="#experience" class="mobile-link">Experience</a>
         <a href="#github" class="mobile-link">GitHub</a>
         <a href="#contact" class="mobile-link">Contact</a>
@@ -120,15 +206,23 @@
 
                     <!-- Satellite Animation -->
                     <div class="satellite-orbit">
-                        <div class="satellite">
-                            <i class="fas fa-satellite"></i>
-                        </div>
+                        <!-- Golden Sparkle Constellation along the path -->
+                        <div class="orbit-star star-1"><i class="fas fa-star"></i></div>
+                        <div class="orbit-dot dot-1"></div>
+                        <div class="orbit-star star-2"><i class="fas fa-star"></i></div>
+                        <div class="orbit-dot dot-2"></div>
+                        <div class="orbit-star star-3"><i class="fas fa-star"></i></div>
+                        <div class="orbit-dot dot-3"></div>
+                        <div class="orbit-star star-4"><i class="fas fa-star"></i></div>
+                        <div class="orbit-dot dot-4"></div>
                     </div>
 
                     <div class="satellite-orbit-2">
-                        <div class="satellite-2">
-                            <i class="fas fa-satellite-dish"></i>
-                        </div>
+                        <!-- Opposite Orbit Sparkles -->
+                        <div class="orbit-star star-5"><i class="fas fa-star"></i></div>
+                        <div class="orbit-dot dot-5"></div>
+                        <div class="orbit-star star-6"><i class="fas fa-star"></i></div>
+                        <div class="orbit-dot dot-6"></div>
                     </div>
 
                     <div class="floating-badge badge-top-right float-anim">
@@ -294,6 +388,10 @@
                         <span class="tech-tag">OpenCV</span>
                         <span class="tech-tag">Computer Vision</span>
                     </div>
+                    <div class="project-links">
+                        <a href="https://github.com/sankaadikaramNW/slaf-firearm-simulator" target="_blank" class="project-link"><i class="fab fa-github"></i> Repository</a>
+                        <a href="https://github.com/sankaadikaramNW/slaf-firearm-simulator/blob/main/README.md" target="_blank" class="project-link"><i class="fas fa-file-alt"></i> README</a>
+                    </div>
                 </div>
 
                 <!-- Project 2 -->
@@ -308,6 +406,10 @@
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Scikit-learn</span>
                         <span class="tech-tag">XGBoost</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/sankaadikaramNW/aqi-prediction-system" target="_blank" class="project-link"><i class="fab fa-github"></i> Repository</a>
+                        <a href="https://github.com/sankaadikaramNW/aqi-prediction-system/blob/main/README.md" target="_blank" class="project-link"><i class="fas fa-file-alt"></i> README</a>
                     </div>
                 </div>
 
@@ -326,6 +428,10 @@
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Streamlit</span>
                     </div>
+                    <div class="project-links">
+                        <a href="https://github.com/sankaadikaramNW/person-counter" target="_blank" class="project-link"><i class="fab fa-github"></i> Repository</a>
+                        <a href="https://github.com/sankaadikaramNW/person-counter/blob/main/README.md" target="_blank" class="project-link"><i class="fas fa-file-alt"></i> README</a>
+                    </div>
                 </div>
 
                 <!-- Project 4 -->
@@ -341,8 +447,226 @@
                         <span class="tech-tag">MySQL</span>
                         <span class="tech-tag">Vanilla JS</span>
                     </div>
+                    <div class="project-links">
+                        <a href="https://github.com/sankaadikaramNW/fashion-pos-system" target="_blank" class="project-link"><i class="fab fa-github"></i> Repository</a>
+                        <a href="https://github.com/sankaadikaramNW/fashion-pos-system/blob/main/README.md" target="_blank" class="project-link"><i class="fas fa-file-alt"></i> README</a>
+                    </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- Hire Me & Services HUD Section -->
+    <section class="section hire-me-section" id="hire-me">
+        <div class="hud-grid-bg"></div>
+        <div class="hud-radial-glow"></div>
+        
+        <div class="container">
+            <div class="hud-header">
+                <div class="hud-tag">
+                    <span class="hud-blink-dot"></span> SYSTEM DIAGNOSTIC: SERVICES AVAILABLE
+                </div>
+                <h2 class="section-title hud-title">Hire Me</h2>
+                <p class="section-subtitle hud-subtitle">
+                    Building intelligent systems for security, automation, and real-time AI applications.
+                </p>
+                <div class="hud-divider">
+                    <div class="hud-divider-line"></div>
+                    <div class="hud-divider-center"><i data-lucide="shield-check"></i></div>
+                    <div class="hud-divider-line"></div>
+                </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="services-hud-grid">
+                <!-- Service Card 1 -->
+                <div class="service-hud-card hover-lift">
+                    <div class="card-scanner"></div>
+                    <div class="card-glow-spot"></div>
+                    <div class="service-card-header">
+                        <div class="service-hud-icon">
+                            <i data-lucide="brain"></i>
+                        </div>
+                        <span class="service-hud-id">SVC_01 // AI_ML</span>
+                    </div>
+                    <h3>AI & Machine Learning Solutions</h3>
+                    <p class="service-desc">
+                        Design and develop intelligent AI systems including prediction models, deep learning pipelines, and anomaly detection solutions.
+                    </p>
+                    <div class="service-skills-tags">
+                        <span class="service-skill-tag">Machine Learning</span>
+                        <span class="service-skill-tag">Deep Learning</span>
+                        <span class="service-skill-tag">Predictive Analytics</span>
+                        <span class="service-skill-tag">Data Processing</span>
+                        <span class="service-skill-tag">Model Optimization</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-hud-card hover-lift">
+                    <div class="card-scanner"></div>
+                    <div class="card-glow-spot"></div>
+                    <div class="service-card-header">
+                        <div class="service-hud-icon">
+                            <i data-lucide="eye"></i>
+                        </div>
+                        <span class="service-hud-id">SVC_02 // COMP_VISION</span>
+                    </div>
+                    <h3>Computer Vision Systems</h3>
+                    <p class="service-desc">
+                        Develop real-time computer vision applications for surveillance, tracking, object detection, and intelligent monitoring systems.
+                    </p>
+                    <div class="service-skills-tags">
+                        <span class="service-skill-tag">OpenCV</span>
+                        <span class="service-skill-tag">Object Detection</span>
+                        <span class="service-skill-tag">Video Analytics</span>
+                        <span class="service-skill-tag">Tracking Systems</span>
+                        <span class="service-skill-tag">Real-time Detection</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-hud-card hover-lift">
+                    <div class="card-scanner"></div>
+                    <div class="card-glow-spot"></div>
+                    <div class="service-card-header">
+                        <div class="service-hud-icon">
+                            <i data-lucide="layers"></i>
+                        </div>
+                        <span class="service-hud-id">SVC_03 // FULL_STACK</span>
+                    </div>
+                    <h3>Full Stack Development</h3>
+                    <p class="service-desc">
+                        Build scalable frontend and backend applications with modern technologies and deployment-ready architecture.
+                    </p>
+                    <div class="service-skills-tags">
+                        <span class="service-skill-tag">React.js</span>
+                        <span class="service-skill-tag">API Integration</span>
+                        <span class="service-skill-tag">PHP</span>
+                        <span class="service-skill-tag">MySQL</span>
+                        <span class="service-skill-tag">Responsive UI</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="service-hud-card hover-lift">
+                    <div class="card-scanner"></div>
+                    <div class="card-glow-spot"></div>
+                    <div class="service-card-header">
+                        <div class="service-hud-icon">
+                            <i data-lucide="cpu"></i>
+                        </div>
+                        <span class="service-hud-id">SVC_04 // RESEARCH</span>
+                    </div>
+                    <h3>AI Research & Prototyping</h3>
+                    <p class="service-desc">
+                        Research-driven AI solution development for experimental systems, proof-of-concepts, and advanced engineering projects.
+                    </p>
+                    <div class="service-skills-tags">
+                        <span class="service-skill-tag">Research Engineering</span>
+                        <span class="service-skill-tag">Model Experimentation</span>
+                        <span class="service-skill-tag">AI Prototyping</span>
+                        <span class="service-skill-tag">Data Analysis</span>
+                        <span class="service-skill-tag">Technical Problem Solving</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="service-hud-card hover-lift">
+                    <div class="card-scanner"></div>
+                    <div class="card-glow-spot"></div>
+                    <div class="service-card-header">
+                        <div class="service-hud-icon">
+                            <i data-lucide="server"></i>
+                        </div>
+                        <span class="service-hud-id">SVC_05 // DEPLOY_INFRA</span>
+                    </div>
+                    <h3>Deployment & System Integration</h3>
+                    <p class="service-desc">
+                        Deploy and integrate AI applications into production-ready environments with optimized performance and infrastructure setup.
+                    </p>
+                    <div class="service-skills-tags">
+                        <span class="service-skill-tag">Linux Servers</span>
+                        <span class="service-skill-tag">NGINX</span>
+                        <span class="service-skill-tag">GitHub Deployment</span>
+                        <span class="service-skill-tag">Hosting Configuration</span>
+                        <span class="service-skill-tag">Cloud Integration</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Animated Capabilities Matrix / Diagnostics -->
+            <div class="hud-diagnostics-container">
+                <div class="diagnostics-header">
+                    <i data-lucide="activity" class="spinning-icon"></i>
+                    <h3>CORE AI ENGINEERING CAPABILITIES MATRIX</h3>
+                </div>
+                
+                <div class="diagnostics-grid">
+                    <!-- Stat Vector 1 -->
+                    <div class="diagnostic-bar-wrapper">
+                        <div class="bar-info">
+                            <span class="bar-label"><i data-lucide="network"></i> Neural Architectures & Deep Learning</span>
+                            <span class="bar-percentage" data-target="92">0%</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Stat Vector 2 -->
+                    <div class="diagnostic-bar-wrapper">
+                        <div class="bar-info">
+                            <span class="bar-label"><i data-lucide="scan"></i> Computer Vision & Object Tracking</span>
+                            <span class="bar-percentage" data-target="95">0%</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Stat Vector 3 -->
+                    <div class="diagnostic-bar-wrapper">
+                        <div class="bar-info">
+                            <span class="bar-label"><i data-lucide="terminal"></i> Scalable Web Systems & API Interfaces</span>
+                            <span class="bar-percentage" data-target="88">0%</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Stat Vector 4 -->
+                    <div class="diagnostic-bar-wrapper">
+                        <div class="bar-info">
+                            <span class="bar-label"><i data-lucide="cloud"></i> Server Administration & Edge Deployments</span>
+                            <span class="bar-percentage" data-target="85">0%</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="hud-cta-container">
+                <div class="hud-corner-accent top-left"></div>
+                <div class="hud-corner-accent top-right"></div>
+                <div class="hud-corner-accent bottom-left"></div>
+                <div class="hud-corner-accent bottom-right"></div>
+
+                <div class="hud-cta-content">
+                    <div class="hud-cta-badge"><span class="hud-blink-dot"></span> CALL_TO_ACTION</div>
+                    <h3>Interested in building intelligent AI-powered systems or modern software solutions?</h3>
+                    <p>Let's collaborate to build highly reliable, next-generation platforms engineered for high performance.</p>
+                    <div class="hud-cta-actions">
+                        <a href="#contact" class="btn btn-hud-solid"><i data-lucide="briefcase"></i> Hire Me</a>
+                        <a href="Sanka_Adikaram_Resume.pdf" download class="btn btn-hud-outline"><i data-lucide="download"></i> Download Resume</a>
+                        <a href="https://wa.me/94766932107" target="_blank" class="btn btn-hud-green"><i data-lucide="message-square"></i> Contact Me</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -493,30 +817,96 @@
     <section class="section" id="github">
         <div class="container">
             <h2 class="section-title">📊 GitHub Analytics</h2>
-            <div class="github-stats-container">
-                <div class="github-card trophy-card hover-lift" style="flex-basis: 100%;">
-                    <img src="https://github-profile-trophy.vercel.app/?username=sankaadikaramNW&theme=tokyonight&no-bg=true&margin-w=15"
-                        alt="GitHub Trophies" class="github-img">
+            
+            <div class="github-stats-grid">
+                <!-- Card 1: Profile Mainframe -->
+                <div class="github-native-card mainframe-card hover-lift">
+                    <div class="card-bracket top-left"></div>
+                    <div class="card-bracket top-right"></div>
+                    <div class="card-bracket bottom-left"></div>
+                    <div class="card-bracket bottom-right"></div>
+                    
+                    <div class="github-header-main">
+                        <img id="github-avatar" src="assets/profile.png" alt="Sanka Adikaram" class="github-profile-avatar">
+                        <div class="github-header-info">
+                            <h3 id="github-name">Sanka Adikaram</h3>
+                            <p id="github-username">@sankaadikaramNW</p>
+                            <span class="hud-status-badge"><span class="hud-blink-dot"></span> LIVE PROFILE CONNECTION</span>
+                        </div>
+                    </div>
+                    
+                    <div class="github-bio-block">
+                        <p id="github-bio">IT Professional & Software Developer | AI, Machine Learning, and Data Science Enthusiast.</p>
+                    </div>
+                    
+                    <div class="github-metrics-grid">
+                        <div class="metric-item">
+                            <span class="metric-val" id="github-repos">12</span>
+                            <span class="metric-lbl">Repositories</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-val" id="github-followers">--</span>
+                            <span class="metric-lbl">Followers</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-val" id="github-stars">--</span>
+                            <span class="metric-lbl">Repo Stars</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="github-card hover-lift">
-                    <img src="https://github-readme-stats.vercel.app/api?username=sankaadikaramNW&show_icons=true&theme=tokyonight"
-                        alt="GitHub Stats" class="github-img">
-                </div>
-                <div class="github-card hover-lift">
-                    <img src="https://github-readme-streak-stats.herokuapp.com/?user=sankaadikaramNW&theme=tokyonight"
-                        alt="GitHub Streak" class="github-img">
-                </div>
-                <div class="github-card hover-lift" style="flex-basis: 100%;">
-                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sankaadikaramNW&layout=compact&theme=tokyonight"
-                        alt="Top Languages" class="github-img">
-                </div>
-                <div class="github-card hover-lift" style="flex-basis: 100%;">
-                    <img src="https://github-readme-activity-graph.vercel.app/graph?username=sankaadikaramNW&theme=tokyo-night&bg_color=1a1b27&hide_border=true"
-                        alt="GitHub Activity Graph" class="github-img">
+
+                <!-- Card 2: Top Languages Matrix -->
+                <div class="github-native-card languages-card hover-lift">
+                    <div class="card-bracket top-left"></div>
+                    <div class="card-bracket top-right"></div>
+                    <div class="card-bracket bottom-left"></div>
+                    <div class="card-bracket bottom-right"></div>
+                    
+                    <h3><i class="fas fa-code-branch" style="color: var(--primary);"></i> Language Metrics</h3>
+                    <div class="languages-bars" id="github-languages">
+                        <!-- Default Fallback Bars -->
+                        <div class="lang-bar-item">
+                            <div class="lang-info">
+                                <span class="lang-name">Python</span>
+                                <span class="lang-pct">45%</span>
+                            </div>
+                            <div class="lang-progress-bg">
+                                <div class="lang-progress-fill" style="width: 45%; background: #3572A5;"></div>
+                            </div>
+                        </div>
+                        <div class="lang-bar-item">
+                            <div class="lang-info">
+                                <span class="lang-name">JavaScript</span>
+                                <span class="lang-pct">30%</span>
+                            </div>
+                            <div class="lang-progress-bg">
+                                <div class="lang-progress-fill" style="width: 30%; background: #f1e05a;"></div>
+                            </div>
+                        </div>
+                        <div class="lang-bar-item">
+                            <div class="lang-info">
+                                <span class="lang-name">PHP</span>
+                                <span class="lang-pct">15%</span>
+                            </div>
+                            <div class="lang-progress-bg">
+                                <div class="lang-progress-fill" style="width: 15%; background: #4F5D95;"></div>
+                            </div>
+                        </div>
+                        <div class="lang-bar-item">
+                            <div class="lang-info">
+                                <span class="lang-name">HTML/CSS</span>
+                                <span class="lang-pct">10%</span>
+                            </div>
+                            <div class="lang-progress-bg">
+                                <div class="lang-progress-fill" style="width: 10%; background: #e34c26;"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            
             <div style="text-align: center; margin-top: 3rem;">
-                <a href="https://github.com/sankaadikaramNW/sankaadikaramNW" target="_blank" class="btn btn-outline"><i
+                <a href="https://github.com/sankaadikaramNW" target="_blank" class="btn btn-outline"><i
                         class="fab fa-github" style="margin-right: 8px;"></i>View My GitHub Profile</a>
             </div>
         </div>
@@ -564,19 +954,18 @@
             </div>
 
             <div class="contact-form-container">
-                <form class="contact-form" id="contactForm"
-                    onsubmit="event.preventDefault(); alert('Thank you for your message! This is a demo form.');">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" required placeholder="Your Name">
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" required placeholder="Your Email">
+                        <input type="email" id="email" name="email" required placeholder="Your Email">
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" rows="5" required placeholder="How can I help you?"></textarea>
+                        <textarea id="message" name="message" rows="5" required placeholder="How can I help you?"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Send Message</button>
                 </form>

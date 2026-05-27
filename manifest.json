@@ -1,0 +1,21 @@
+{
+  "short_name": "Sanka Portfolio",
+  "name": "Sanka Adikaram | Professional Portfolio",
+  "icons": [
+    {
+      "src": "assets/profile.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "assets/profile.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/portfolio/index.html",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "theme_color": "#2563EB",
+  "description": "Portfolio of Sanka Adikaram - IT Professional, Software Developer, and Data Science Enthusiast."
+}
